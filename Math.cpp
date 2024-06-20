@@ -1,6 +1,12 @@
 // number of 1's in binary representation
 ll popcnt (ll x) { return __builtin_popcountll(x); }
 
+// number of leading zeroes ... helpful for getting msb
+void getZeroes(int n) {
+    int k=__builtin_clz(n);
+    // for msb do 1<<(63-k)
+}
+
 // gcd of numbers a and b
 ll gcd (ll a, ll b) { return b ? gcd (b, a % b) : a; }
 
