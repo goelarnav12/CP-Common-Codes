@@ -26,7 +26,7 @@ int query(int tree[], int node, int st, int en, int l, int r)
 {
     if (st > r || en < l)
     {
-        return 0;
+        return 0; // Change according to combine
     }
     if (st >= l && en <= r)
     {
