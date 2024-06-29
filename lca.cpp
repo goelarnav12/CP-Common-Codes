@@ -31,3 +31,7 @@ int lca(int u,int v,int depth[],int parent[][22]){
     }
     return parent[u][0];
 }
+
+// important
+mem(depth,0);
+mem(parent,0);
