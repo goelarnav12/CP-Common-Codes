@@ -48,3 +48,15 @@ map<int,int> getFactorization(int x)
     }
     return power;
 }
+
+int totalFactors(int x)
+{
+    int ans = 1;
+    map<int,int> m = getFactorization(int x);
+    map<int,int> :: iterator = it;
+    for(it=m.begin();it!=m.end();it++){
+        ans*=((*it).ss+1);
+    }
+    return ans;
+}
+    
