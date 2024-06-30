@@ -1,4 +1,4 @@
-void dfs(int u,int p,vector<int> g[],int depth[],int parent[][22]){
+void dfs(int v,int p,vector<int> g[],int depth[],int parent[][22]){
     f(i,0,g[v].size()){
         int c = g[v][i];
         if(c==p) continue;
