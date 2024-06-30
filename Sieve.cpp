@@ -1,21 +1,4 @@
-// Gets all Prime numbers upto n
-vector<bool> sieve(int n)
-{
-    // Time Complexity:- O(log(log(n)))
-    vector<bool> is_prime(n + 1, 1);
-    is_prime[0] = is_prime[1] = 0;
-    for (int i = 2; i <= n; i++)
-    {
-        if (is_prime[i] && i * i <= n)
-        {
-            for (int j = i * i; j <= n; j += i)
-                is_prime[j] = 0;
-        }
-    }
-    return is_prime;
-}
-
-#define MAXN   100001
+#define MAXN   1000001
  
 // stores smallest prime factor for every number
 int spf[MAXN];
@@ -55,13 +38,13 @@ void sieve()
  
 // A O(log n) function returning primefactorization
 // by dividing by smallest prime factor at every step
-vector<int> getFactorization(int x)
+map<int,int> getFactorization(int x)
 {
-    vector<int> ret;
+    map<int,int> power;
     while (x != 1)
     {
-        ret.push_back(spf[x]);
+        power[spf[x]]+=1;
         x = x / spf[x];
     }
-    return ret;
+    return power;
 }
