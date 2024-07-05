@@ -11,9 +11,9 @@ void getZeroes(int n) {
 ll gcd (ll a, ll b) { return b ? gcd (b, a % b) : a; }
 
 
-unsigned long long power(unsigned long long x, int y, int p)
+ int power( int x, int y, int p)
 {
-    unsigned long long res = 1; // Initialize result
+     int res = 1; // Initialize result
 
     x = x % p; // Update x if it is more than or
     // equal to p
@@ -31,19 +31,19 @@ unsigned long long power(unsigned long long x, int y, int p)
     }
     return res;
 }
-unsigned long long modInverse(unsigned long long n, int p)
+ int modInverse( int n, int p)
 {
     return power(n, p - 2, p);
 }
-unsigned long long mul(unsigned long long x,unsigned long long y, int p)
+ int mul( int x, int y, int p)
 {
     return x * 1ull * y % p;
 }
-unsigned long long divide(unsigned long long x,unsigned long long y, int p)
+ int divide( int x, int y, int p)
 {
     return mul(x, modInverse(y, p), p);
 }
-unsigned long long nCrModPFermat(unsigned long long n,int r, int p)
+ int nCrModPFermat( int n,int r, int p)
 {
     // If n<r, then nCr should return 0
     if (n < r)
@@ -58,7 +58,7 @@ unsigned long long nCrModPFermat(unsigned long long n,int r, int p)
     // Fill factorial array so that we
     // can find all factorial of r, n
     // and n-r
-    unsigned long long res = 1;
+     int res = 1;
     // keep multiplying numerator terms and deviding denominator terms in res
     for (int i = r; i >= 1; i--)
         res = divide(mul(res, n - i + 1, p), i, p);
