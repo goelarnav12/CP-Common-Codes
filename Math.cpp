@@ -11,7 +11,7 @@ void getZeroes(int n) {
 ll gcd (ll a, ll b) { return b ? gcd (b, a % b) : a; }
 
 
- int power( int x, int y, int p)
+int power( int x, int y, int p)
 {
      int res = 1; // Initialize result
 
@@ -31,19 +31,19 @@ ll gcd (ll a, ll b) { return b ? gcd (b, a % b) : a; }
     }
     return res;
 }
- int modInverse( int n, int p)
+int modInverse( int n, int p)
 {
     return power(n, p - 2, p);
 }
- int mul( int x, int y, int p)
+int mul( int x, int y, int p)
 {
     return x * 1ull * y % p;
 }
- int divide( int x, int y, int p)
+int divide( int x, int y, int p)
 {
     return mul(x, modInverse(y, p), p);
 }
- int nCrModPFermat( int n,int r, int p)
+int nCrModPFermat( int n,int r, int p)
 {
     // If n<r, then nCr should return 0
     if (n < r)
