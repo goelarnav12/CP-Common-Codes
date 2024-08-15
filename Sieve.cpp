@@ -1,4 +1,4 @@
-#define MAXN   1000001
+const int MAXN = 1e7+2;
  
 // stores smallest prime factor for every number
 int spf[MAXN];
