@@ -64,3 +64,6 @@ int nCrModPFermat(int n,int r,int p)
         res = divide(mul(res, n - i + 1, p), i, p);
     return res;
 }
+int nCr(int n,int r,int fact[],int p){
+    return divide(fact[n],mul(fact[n-r],fact[r],p),p);
+}
